@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject[] hpObj;
 
+    public float gameTime = 300f;
+
     private void Awake()
     {
         Instance = this;

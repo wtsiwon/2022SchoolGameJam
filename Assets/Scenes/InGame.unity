@@ -503,6 +503,8 @@ GameObject:
   m_Component:
   - component: {fileID: 905306878}
   - component: {fileID: 905306877}
+  - component: {fileID: 905306880}
+  - component: {fileID: 905306879}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -575,6 +577,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &905306879
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905306876}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &905306880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905306876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf4af4dd861c8344aacfd4ecfcbe5a2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  posY:
+  - 3.5
+  - 0
+  - -3.5
+  currentPosIndex: 1
+  a: {fileID: 0}
 --- !u!1 &913197090
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,6 +809,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1514832433}
+  - component: {fileID: 1514832434}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -784,6 +831,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1514832434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514832432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee4c87f393d49174da09e74afc2cc908, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy:
+  - {fileID: -5654380080678504084, guid: 18e709ae2a4e30d41a7538ec699299c6, type: 3}
+  - {fileID: -4129151926207905161, guid: ee61ae076762fa44eace0f412166fa89, type: 3}
+  - {fileID: 940046550048897684, guid: f22247fafaedb03419710c88e0c540a4, type: 3}
+  spawnPos:
+  - {fileID: 432931967}
+  - {fileID: 1922896145}
+  - {fileID: 1922250892}
 --- !u!1 &1598935443
 GameObject:
   m_ObjectHideFlags: 0
