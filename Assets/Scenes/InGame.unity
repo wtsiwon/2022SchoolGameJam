@@ -1220,8 +1220,8 @@ MonoBehaviour:
   detectedEnemy: {fileID: 0}
   pengiSkill: {fileID: 970160039}
   dmg: 3
-  attackSpd: 0.3
-  attackDel: 0
+  defaultDmg: 3
+  onFireDmg: 10
   moveXSpd: 0.05
   isFireAtk: 0
   posY:
@@ -1389,6 +1389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillData: {fileID: 11400000, guid: 0e993a2da83e34a4294c71631414e7e4, type: 2}
   icon: {fileID: 2120211737}
+  fireDuration: 0
 --- !u!1 &977195336
 GameObject:
   m_ObjectHideFlags: 0
@@ -2048,6 +2049,7 @@ MonoBehaviour:
   skillList:
   - {fileID: 970160039}
   - {fileID: 1718546861}
+  - {fileID: 1909390714}
 --- !u!1 &1403818053
 GameObject:
   m_ObjectHideFlags: 0
@@ -2345,6 +2347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillData: {fileID: 11400000, guid: 87cef26a45418994fa4ea54b63c3c5fb, type: 2}
   icon: {fileID: 47399385}
+  fireDuration: 0
 --- !u!1 &1797328135
 GameObject:
   m_ObjectHideFlags: 0
@@ -2548,6 +2551,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillData: {fileID: 11400000, guid: 18aacbec09def6743bdb3aaa32653bcb, type: 2}
   icon: {fileID: 1797328137}
+  fireDuration: 0
 --- !u!1 &1922250891
 GameObject:
   m_ObjectHideFlags: 0
