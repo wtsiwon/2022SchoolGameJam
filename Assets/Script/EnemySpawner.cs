@@ -33,9 +33,10 @@ public class EnemySpawner : MonoBehaviour
             if (isSpawn)
             {
                 SpawnRandomEnemy();
-                yield return new WaitForSeconds(spawnDel +
-                    Random.Range(-spawnInterval, spawnInterval));
             }
+            yield return new WaitForSeconds(spawnDel +
+                Random.Range(-spawnInterval, spawnInterval));
+
         }
     }
 

@@ -7,6 +7,13 @@ public class Player : MonoBehaviour
 {
     public static Player Instance;
 
+    [HideInInspector]
+    public Enemy detectedEnemy;
+
+    public float dmg;
+    public float attackSpd;
+    public float moveXSpd;
+
     public float[] posY;
 
     public int currentPosIndex = 1;
@@ -25,6 +32,7 @@ public class Player : MonoBehaviour
 
     private void InputKey()
     {
+        #region Move
         if (Input.GetKeyDown(KeyCode.S) && !(currentPosIndex == 2))
         {
             currentPosIndex += 1;
@@ -37,5 +45,30 @@ public class Player : MonoBehaviour
             transform.DOMoveY(posY[currentPosIndex], 0.5f);
             //transform.position = new Vector3(transform.position.x, posY[currentPosIndex], 0);
         }
+        float x = Input.GetAxisRaw("Horizontal") * moveXSpd;
+        transform.position = new Vector3(transform.position.x + x, transform.position.y, 0);
+        #endregion
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            BasicAttack();
+        }
     }
+
+    private void BasicAttack()
+    {
+        print("attack");
+        if (detectedEnemy == null) return;
+        detectedEnemy.Hp -= (int)dmg;
+        EffectManager.Instance.DmgTextEffect(dmg, detectedEnemy.transform.position);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            detectedEnemy = collision.GetComponent<Enemy>();
+            print(detectedEnemy);
+        }
+    }
+
 }

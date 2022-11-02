@@ -8,6 +8,18 @@ public enum ESkillType
     Tuho,
 }
 
+public enum EEffectType
+{
+    DmgText,
+
+}
+
+public enum EEnemyType
+{
+    Nomal,
+    Middle,
+    Boss,
+}
 public class Defines : MonoBehaviour
 {
     

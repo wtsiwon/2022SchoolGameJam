@@ -6,7 +6,7 @@ TagManager:
   tags:
   - DestroyZone
   - Enemy
-  - AttackObject
+  - AttackCol
   layers:
   - Default
   - TransparentFX
