@@ -15,7 +15,31 @@ public class GameManager : MonoBehaviour
 
     public GameObject[] hpObj;
 
-    public int hp;
+    public int maxHp;
+
+    [SerializeField]
+    private int hp;
+    public int Hp
+    {
+        get => hp;
+        set
+        {
+            if (value > maxHp) hp = maxHp;
+            else if (value <= 0) GameOver();
+            else
+            {
+                hp = value;
+                for (int i = 0; i < 3; i++)
+                {
+                    hpObj[i].gameObject.SetActive(false);
+                }
+                for (int i = 0; i < hp; i++)
+                {
+                    hpObj[i].gameObject.SetActive(true);
+                }
+            }
+        }
+    }
 
     public float gameTime = 300f;
 

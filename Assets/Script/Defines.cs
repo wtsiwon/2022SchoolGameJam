@@ -4,8 +4,11 @@ using UnityEngine;
 
 public enum ESkillType
 {
-    GangGang,
+    Peng,
     Tuho,
+    Fire,
+    GangGang,
+    Gonggi,
 }
 
 public enum EEffectType
@@ -16,7 +19,8 @@ public enum EEffectType
 
 public enum EEnemyType
 {
-    Nomal,
+    Nomal1,
+    Nomal2,
     Middle,
     Boss,
 }

@@ -38,8 +38,7 @@ public class Enemy : MonoBehaviour
             else
             {
                 hp = value;
-                hpbar.value = maxHp - hp;
-
+                hpbar.value = hp;
             }
         }
     }

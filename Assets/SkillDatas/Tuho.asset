@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae5ab44937dd15744bed7a977ea526be, type: 3}
+  m_Name: Tuho
+  m_EditorClassIdentifier: 
+  skillType: 1
+  skillIconSprite: {fileID: 0}
+  coolTime: 8
+  skillObj: {fileID: 3801648423132861395, guid: 1a4d921ab1b68cd468d5bd6bf4130d3b, type: 3}
+  coolDown: 0

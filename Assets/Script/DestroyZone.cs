@@ -16,11 +16,7 @@ public class DestroyZone : MonoBehaviour
         Destroy(collision.gameObject);
         if (collision.CompareTag("Enemy"))
         {
-            if (GameManager.Instance.hp == 1)
-            {
-                GameManager.Instance.GameOver();
-            }
-            GameManager.Instance.hp -= 1;
+            GameManager.Instance.Hp -= 1;
             GameManager.Instance.cam.transform.DOShakePosition(0.2f,0.5f);
         }
     }
