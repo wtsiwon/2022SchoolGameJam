@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
         {
             if(gameTime < 0.1f)
             {
-                GameOver();
+                Clear();
             }
 
             if(gameTime < 60)
@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
                 EnemySpawner.Instance.spawnDel = 3.5f;
                 EnemySpawner.Instance.enemySpd = 1.2f;
                 Player.Instance.dmg = 7;
-                Player.Instance.defaultDmg = 8;
+                Player.Instance.defaultDmg = 7;
                 Player.Instance.onFireDmg = 14;
             }
 
@@ -100,6 +100,10 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("GameOver");
     }
 
+    private void Clear()
+    {
+        SceneManager.LoadScene("Clear");
+    }
 
 
 }

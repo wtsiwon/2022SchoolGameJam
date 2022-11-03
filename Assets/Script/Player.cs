@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        //playerAnim = GetComponent<Animator>();
+        playerAnim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
         pengiSkill.icon.fillAmount = 1;
         dmg = defaultDmg;
@@ -98,6 +98,8 @@ public class Player : MonoBehaviour
         //if (detectedEnemy == null) return;
         print(pengiSkill.skillData.coolDown);
 
+        playerAnim.SetInteger("AtkNum" ,1);
+
         RaycastHit2D[] rays = Physics2D.BoxCastAll((Vector2)transform.position + boxCollider.offset, boxCollider.size, 0, Vector3.forward);
 
         //Gizmos.DrawLine(transform.position + (Vector3)boxCollider.offset, );
@@ -115,6 +117,7 @@ public class Player : MonoBehaviour
 
             EffectManager.Instance.DmgTextEffect(dmg, rays[i].collider.transform.position);
         }
+        playerAnim.SetInteger("AtkNum", 0);
     }
 
     private IEnumerator CWaitBasicAnim()
