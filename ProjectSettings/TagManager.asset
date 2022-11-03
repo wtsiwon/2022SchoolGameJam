@@ -9,6 +9,7 @@ TagManager:
   - AttackCol
   - TuhoObj
   - GangGangObj
+  - GonggiObj
   layers:
   - Default
   - TransparentFX

@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Tuho
   m_EditorClassIdentifier: 
   skillType: 1
-  skillIconSprite: {fileID: 0}
-  coolTime: 8
+  coolTime: 5
   skillObj: {fileID: 3801648423132861395, guid: 1a4d921ab1b68cd468d5bd6bf4130d3b, type: 3}
   coolDown: 0

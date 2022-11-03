@@ -424,9 +424,8 @@ MonoBehaviour:
   maxHp: 60
   dmgText: {fileID: 8705024138660960020, guid: 8cb79d326c38aeb419c87e3ff9bd659b, type: 3}
   hpbar: {fileID: 4971178678767710315}
-  enemyType: 0
+  enemyType: 1
   hp: 60
-  moveSpd: 1
 --- !u!1 &8118865799137778174
 GameObject:
   m_ObjectHideFlags: 0

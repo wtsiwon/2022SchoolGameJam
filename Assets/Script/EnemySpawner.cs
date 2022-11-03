@@ -16,6 +16,8 @@ public class EnemySpawner : MonoBehaviour
 
     public bool isSpawn;
 
+    public float enemySpd;
+
     private void Awake()
     {
         Instance = this;
@@ -24,13 +26,26 @@ public class EnemySpawner : MonoBehaviour
     private void Start()
     {
         StartCoroutine(CSpawnEnemy());
-        Invoke(nameof(SpawnEnemy), 5);
-        Invoke(nameof(SpawnEnemy), 20);
+        Invoke(nameof(SpawnEnemy), 60);
+        Invoke(nameof(SpawnEnemy), 120);
+        Patterns();
     }
 
     private void SpawnEnemy()
     {
         StartCoroutine(CSpawnEnemy());
+    }
+
+    private void Patterns()
+    {
+        Invoke(nameof(SpawnMiddleEnemy), 20);
+        Invoke(nameof(SpawnBossEnemy), 45);
+        Invoke(nameof(SpawnMiddleEnemy), 60);
+        Invoke(nameof(SpawnBossEnemy), 75);
+        Invoke(nameof(SpawnMiddleEnemy), 85);
+        Invoke(nameof(SpawnMiddleEnemy), 85);
+        Invoke(nameof(SpawnBossEnemy), 100);
+        Invoke(nameof(SpawnBossEnemy), 100);
     }
 
     private IEnumerator CSpawnEnemy()
@@ -69,6 +84,11 @@ public class EnemySpawner : MonoBehaviour
         int randPos = Random.Range(0, spawnPos.Length);
         Enemy enemy = Instantiate(enemys[2], spawnPos[randPos].position, Quaternion.identity);
 
+        for (int i = 0; i < 6; i++)
+        {
+            Invoke(nameof(SpawnBasicEnemy), 0.3f * (i + 1));
+        }
+
         return enemy;
     }
 
@@ -76,6 +96,12 @@ public class EnemySpawner : MonoBehaviour
     {
         int randPos = Random.Range(0, spawnPos.Length);
         Enemy enemy = Instantiate(enemys[3], spawnPos[randPos].position, Quaternion.identity);
+
+        for (int i = 0; i < 15; i++)
+        {
+            Invoke(nameof(SpawnBasicEnemy), 0.3f * (i + 1));
+        }
+
         return enemy;
     }
 

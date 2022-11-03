@@ -15,6 +15,10 @@ public class GameManager : MonoBehaviour
 
     public GameObject[] hpObj;
 
+    public GameObject stopBoard;
+
+    public bool isStopBoard;
+
     public int maxHp;
 
     [SerializeField]
@@ -64,17 +68,24 @@ public class GameManager : MonoBehaviour
                 GameOver();
             }
 
-            if(gameTime < 30)
+            if(gameTime < 60)
             {
                 EnemySpawner.Instance.spawnDel = 2f;
                 EnemySpawner.Instance.spawnInterval = 0;
+                EnemySpawner.Instance.enemySpd = 1.5f;
+                Player.Instance.dmg = 9;
+                Player.Instance.defaultDmg = 9;
+                Player.Instance.onFireDmg = 16;
             }
-            else if(gameTime < 100)
+            else if(gameTime < 120)
             {
                 EnemySpawner.Instance.spawnDel = 3.5f;
-                
+                EnemySpawner.Instance.enemySpd = 1.2f;
+                Player.Instance.dmg = 7;
+                Player.Instance.defaultDmg = 8;
+                Player.Instance.onFireDmg = 14;
             }
-            
+
             yield return new WaitForSeconds(0.1f);
             gameTime -= 0.1f;
             

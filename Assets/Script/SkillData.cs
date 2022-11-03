@@ -6,7 +6,6 @@ using UnityEngine;
 public class SkillData : ScriptableObject
 {
     public ESkillType skillType;
-    public Sprite skillIconSprite;
     public float coolTime;
     public GameObject skillObj;
     public bool coolDown;

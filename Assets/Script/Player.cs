@@ -54,6 +54,11 @@ public class Player : MonoBehaviour
         {
             dmg = defaultDmg;
         }
+
+        if(Mathf.Abs(transform.position.x) >= 8.5f)
+        {
+
+        }
     }
 
     private void InputKey()
@@ -90,10 +95,12 @@ public class Player : MonoBehaviour
 
     private void BasicAttack()
     {
-        if (detectedEnemy == null) return;
+        //if (detectedEnemy == null) return;
         print(pengiSkill.skillData.coolDown);
 
-        RaycastHit2D[] rays = Physics2D.BoxCastAll((Vector2)transform.position + boxCollider.offset, boxCollider.size, 0, Vector2.right);
+        RaycastHit2D[] rays = Physics2D.BoxCastAll((Vector2)transform.position + boxCollider.offset, boxCollider.size, 0, Vector3.forward);
+
+        //Gizmos.DrawLine(transform.position + (Vector3)boxCollider.offset, );
 
         for (int i = 0; i < rays.Length; i++)
         {

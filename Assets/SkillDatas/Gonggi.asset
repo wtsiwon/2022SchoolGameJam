@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Gonggi
   m_EditorClassIdentifier: 
   skillType: 4
-  skillIconSprite: {fileID: 0}
-  coolTime: 30
-  skillObj: {fileID: 0}
+  coolTime: 25
+  skillObj: {fileID: 2414101975470632754, guid: 5740ab059f1b3234a9ec8c22d6b039c6, type: 3}
   coolDown: 0

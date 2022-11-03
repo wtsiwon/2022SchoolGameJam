@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: GangGang
   m_EditorClassIdentifier: 
   skillType: 3
-  skillIconSprite: {fileID: 0}
-  coolTime: 20
+  coolTime: 15
   skillObj: {fileID: 1459186253354386806, guid: 818a3af5825445e4381fefef49ebc2b4, type: 3}
-  coolDown: 0
+  coolDown: 1

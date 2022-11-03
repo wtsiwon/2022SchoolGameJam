@@ -19,7 +19,7 @@ public enum EEffectType
 
 public enum EEnemyType
 {
-    Nomal2,
+    Nomal,
     Middle,
     Boss,
 }

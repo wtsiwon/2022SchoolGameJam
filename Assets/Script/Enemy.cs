@@ -22,12 +22,22 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     protected int hp;
 
-    public float moveSpd;
-
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.velocity = Vector3.left * moveSpd;
+        switch (enemyType)
+        {
+            case EEnemyType.Nomal:
+                rb.velocity = Vector3.left * EnemySpawner.Instance.enemySpd;
+                break;
+            case EEnemyType.Middle:
+                rb.velocity = Vector3.left * EnemySpawner.Instance.enemySpd / 1.5f;
+                break;
+            case EEnemyType.Boss:
+                rb.velocity = Vector3.left * EnemySpawner.Instance.enemySpd / 2.5f;
+                break;
+        }
+
         hpbar.maxValue = maxHp;
         hpbar.value = hp;
     }
@@ -46,11 +56,6 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         string tag = collision.tag;
@@ -59,7 +64,8 @@ public class Enemy : MonoBehaviour
             case "TuhoObj":
                 Hp -= (int)SkillManager.Instance.tuhoDmg;
                 EffectManager.Instance.DmgTextEffect((int)SkillManager.Instance.tuhoDmg, transform.position);
-                GameManager.Instance.cam.transform.DOShakePosition(0.05f, 0.5f);
+                GameManager.Instance.cam.transform.DOShakePosition(0.05f, 0.5f).OnComplete(
+                    () => GameManager.Instance.cam.transform.DOMove(new Vector3(0, 0, -10), 0.1f));
                 break;
             case "GangGangObj":
                 print(tag);

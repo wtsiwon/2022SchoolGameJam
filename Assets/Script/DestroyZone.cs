@@ -13,11 +13,13 @@ public class DestroyZone : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("GonggiObj")) return;
         Destroy(collision.gameObject);
         if (collision.CompareTag("Enemy"))
         {
             GameManager.Instance.Hp -= 1;
-            GameManager.Instance.cam.transform.DOShakePosition(0.2f,0.5f);
+            GameManager.Instance.cam.transform.DOShakePosition(0.1f,0.5f).OnComplete(() 
+                => GameManager.Instance.cam.transform.DOMove(new Vector3(0,0,-10), 0.1f));
         }
     }
 

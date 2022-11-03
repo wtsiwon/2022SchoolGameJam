@@ -9,7 +9,6 @@ public class Skill : MonoBehaviour
 
     public Image icon;
 
-    public float fireDuration;
 
     private void Start()
     {
@@ -18,10 +17,10 @@ public class Skill : MonoBehaviour
 
     private void Update()
     {
-        if(skillData.coolDown == true)
+        if (skillData.coolDown == true)
         {
             icon.fillAmount += 1 / skillData.coolTime * Time.deltaTime;
-            if(icon.fillAmount >= 1)
+            if (icon.fillAmount >= 1)
             {
                 icon.fillAmount = 1;
                 skillData.coolDown = false;
