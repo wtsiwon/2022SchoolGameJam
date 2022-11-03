@@ -97,7 +97,15 @@ public class Player : MonoBehaviour
 
         for (int i = 0; i < rays.Length; i++)
         {
-            rays[i].collider.GetComponent<Enemy>().Hp -= (int)dmg;
+            print(rays[i]);
+            if (rays[i].collider.GetComponent<Enemy>() == null)
+            {
+                continue;
+            }
+            Enemy enemy = rays[i].collider.GetComponent<Enemy>();
+            if (enemy == null) print(enemy);
+            enemy.Hp -= (int)dmg;
+
             EffectManager.Instance.DmgTextEffect(dmg, rays[i].collider.transform.position);
         }
     }
