@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4754590467091328156}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7539861241415728488}
   - component: {fileID: 8598582964107367334}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Hpbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 7731136142989471529}
   - component: {fileID: 1586847321689931961}
   - component: {fileID: 8499694121799641141}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 6344694327199824580}
   - component: {fileID: 4012525907677031664}
   - component: {fileID: 8942230566274568783}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +309,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1912164971965342535}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +349,7 @@ GameObject:
   - component: {fileID: -8874709840221993208}
   - component: {fileID: -5389669930212250514}
   - component: {fileID: 940046550048897684}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BigBoss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -484,8 +484,9 @@ MonoBehaviour:
   maxHp: 100
   dmgText: {fileID: 8705024138660960020, guid: 8cb79d326c38aeb419c87e3ff9bd659b, type: 3}
   hpbar: {fileID: 8598582964107367334}
+  enemyType: 0
   hp: 100
-  moveSpd: 5
+  moveSpd: 1
 --- !u!1 &8411441161182931049
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,7 +498,7 @@ GameObject:
   - component: {fileID: 5225370872206364874}
   - component: {fileID: 3356760592909108578}
   - component: {fileID: 1834425985169030546}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}

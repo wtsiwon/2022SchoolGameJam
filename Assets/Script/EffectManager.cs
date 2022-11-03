@@ -21,9 +21,9 @@ public class EffectManager : MonoBehaviour
             Quaternion.identity, GameManager.Instance.canvas.transform);
 
         dmgText.transform.position = pos;
-        dmgText.transform.DOMoveY(pos.y + 1,0.5f);
+        dmgText.transform.DOMoveY(pos.y + 1.5f,0.5f);
         dmgText.GetComponent<TextMeshProUGUI>().text = $"-{(int)dmg}";
 
-        Destroy(dmgText, 0.4f);
+        Destroy(dmgText, 0.5f);
     }
 }

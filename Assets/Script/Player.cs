@@ -13,10 +13,16 @@ public class Player : MonoBehaviour
 
     public Skill pengiSkill;
 
+    public Animator attackAnim;
+    [HideInInspector]
+    public Animator playerAnim;
+
     public float dmg;
     public float defaultDmg;
     public float onFireDmg;
     public float moveXSpd;
+
+    private BoxCollider2D boxCollider;
 
     [Tooltip("ÁãºÒ ³îÀÌ°¡ ÄÑÁ® ÀÖ´Â°¡")]
     public bool isFireAtk;
@@ -32,15 +38,21 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        //playerAnim = GetComponent<Animator>();
+        boxCollider = GetComponent<BoxCollider2D>();
         pengiSkill.icon.fillAmount = 1;
         dmg = defaultDmg;
     }
     private void Update()
     {
         InputKey();
-        if(isFireAtk == true)
+        if (isFireAtk == true)
         {
             dmg = onFireDmg;
+        }
+        else
+        {
+            dmg = defaultDmg;
         }
     }
 
@@ -62,11 +74,17 @@ public class Player : MonoBehaviour
         float x = Input.GetAxisRaw("Horizontal") * moveXSpd;
         transform.position = new Vector3(transform.position.x + x, transform.position.y, 0);
         #endregion
-        if (Input.GetKeyDown(KeyCode.J) && pengiSkill.skillData.coolDown == false)
+        if (Input.GetKeyDown(KeyCode.J))
         {
-            pengiSkill.skillData.coolDown = true;
-            pengiSkill.icon.fillAmount = 0;
-            BasicAttack();
+            print("¾Ó");
+            if (pengiSkill.skillData.coolDown == false)
+            {
+                //attackAnim.SetInteger("AttackNum", 1);
+                pengiSkill.skillData.coolDown = true;
+                pengiSkill.icon.fillAmount = 0;
+                BasicAttack();
+            }
+            StartCoroutine(CWaitBasicAnim());
         }
     }
 
@@ -74,9 +92,20 @@ public class Player : MonoBehaviour
     {
         if (detectedEnemy == null) return;
         print(pengiSkill.skillData.coolDown);
-        print("attack");
-        detectedEnemy.Hp -= (int)dmg;
-        EffectManager.Instance.DmgTextEffect(dmg, detectedEnemy.transform.position);
+
+        RaycastHit2D[] rays = Physics2D.BoxCastAll((Vector2)transform.position + boxCollider.offset, boxCollider.size, 0, Vector2.right);
+
+        for (int i = 0; i < rays.Length; i++)
+        {
+            rays[i].collider.GetComponent<Enemy>().Hp -= (int)dmg;
+            EffectManager.Instance.DmgTextEffect(dmg, rays[i].collider.transform.position);
+        }
+    }
+
+    private IEnumerator CWaitBasicAnim()
+    {
+        yield return new WaitForSeconds(0.02f);
+        //attackAnim.SetInteger("AttackNum", 0);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

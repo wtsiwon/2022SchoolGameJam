@@ -8,6 +8,11 @@ public class SkillManager : MonoBehaviour
 
     public List<Skill> skillList = new List<Skill>();
 
+    public float tuhoMoveSpd;
+    public float tuhoDmg;
+
+    public float gangForce;
+
     private void Awake()
     {
         Instance = this;
@@ -33,6 +38,10 @@ public class SkillManager : MonoBehaviour
         {
             UseFire();
         }
+        else if (Input.GetKeyDown(KeyCode.I))
+        {
+            UseGangGang();
+        }
     }
 
 
@@ -43,6 +52,13 @@ public class SkillManager : MonoBehaviour
         {
             skill.skillData.coolDown = true;
             skill.icon.fillAmount = 0;
+            GameObject obj = Instantiate(skill.skillData.skillObj);
+            obj.transform.position
+                = new Vector3(Player.Instance.transform.position.x,
+                Player.Instance.posY[Player.Instance.currentPosIndex], 0);
+            obj.GetComponent<Rigidbody2D>().velocity = Vector3.right * tuhoMoveSpd;
+            Destroy(obj, 8);
+
             print(skill.skillData.coolDown + "투호");
         }
     }
@@ -66,7 +82,21 @@ public class SkillManager : MonoBehaviour
         Player.Instance.isFireAtk = false;
     }
 
-
+    private void UseGangGang()
+    {
+        Skill skill = skillList[(int)ESkillType.GangGang];
+        if(skill.skillData.coolDown == false)
+        {
+            skill.skillData.coolDown = true;
+            skill.icon.fillAmount = 0;
+            GameObject obj = Instantiate(skill.skillData.skillObj);
+            obj.transform.position
+                = new Vector3(Player.Instance.transform.position.x, 
+                Player.Instance.posY[Player.Instance.currentPosIndex], 0);
+            Destroy(obj, 5);
+            print(skill.skillData.coolDown + "강강");
+        }
+    }
 
 
 

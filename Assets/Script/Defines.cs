@@ -19,11 +19,12 @@ public enum EEffectType
 
 public enum EEnemyType
 {
-    Nomal1,
     Nomal2,
     Middle,
     Boss,
 }
+
+
 public class Defines : MonoBehaviour
 {
     

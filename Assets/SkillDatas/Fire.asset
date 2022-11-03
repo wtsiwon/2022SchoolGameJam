@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae5ab44937dd15744bed7a977ea526be, type: 3}
   m_Name: Fire
   m_EditorClassIdentifier: 
-  skillType: 0
+  skillType: 2
   skillIconSprite: {fileID: 0}
-  coolTime: 0
+  coolTime: 10
   skillObj: {fileID: 0}
+  coolDown: 0

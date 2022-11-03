@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public float gameTime = 300f;
+    public float gameTime = 180;
 
     public TextMeshProUGUI timeText;
 
@@ -63,6 +63,18 @@ public class GameManager : MonoBehaviour
             {
                 GameOver();
             }
+
+            if(gameTime < 30)
+            {
+                EnemySpawner.Instance.spawnDel = 2f;
+                EnemySpawner.Instance.spawnInterval = 0;
+            }
+            else if(gameTime < 100)
+            {
+                EnemySpawner.Instance.spawnDel = 3.5f;
+                
+            }
+            
             yield return new WaitForSeconds(0.1f);
             gameTime -= 0.1f;
             

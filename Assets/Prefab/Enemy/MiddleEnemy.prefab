@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7089806910717119875}
   - component: {fileID: 2890639275861440112}
   - component: {fileID: 7623437823090997152}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3557762752511799895}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9014710205453800293}
   - component: {fileID: 4971178678767710315}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Hpbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 5371818370223004618}
   - component: {fileID: 4497705014843513764}
   - component: {fileID: 4385679150590837417}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -289,7 +289,7 @@ GameObject:
   - component: {fileID: -8874709840221993208}
   - component: {fileID: -5389669930212250514}
   - component: {fileID: 940046550048897684}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MiddleEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -421,11 +421,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27393ca1d2db173469fc5f023351d85e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 30
+  maxHp: 60
   dmgText: {fileID: 8705024138660960020, guid: 8cb79d326c38aeb419c87e3ff9bd659b, type: 3}
   hpbar: {fileID: 4971178678767710315}
-  hp: 30
-  moveSpd: 5
+  enemyType: 0
+  hp: 60
+  moveSpd: 1
 --- !u!1 &8118865799137778174
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,7 +436,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8535363872205979105}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -473,7 +474,7 @@ GameObject:
   - component: {fileID: 2964841034436036380}
   - component: {fileID: 5327358588927090532}
   - component: {fileID: 4349473788098013421}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

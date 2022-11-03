@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6860071348323496292}
   - component: {fileID: 7764877784598987642}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Hpbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 7466200438545514232}
   - component: {fileID: 7310963665252215114}
   - component: {fileID: 7212630794505286203}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: -2813804430348366226}
   - component: {fileID: 1836424990789477321}
   - component: {fileID: -5654380080678504084}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -338,8 +338,9 @@ MonoBehaviour:
   maxHp: 30
   dmgText: {fileID: 8705024138660960020, guid: 8cb79d326c38aeb419c87e3ff9bd659b, type: 3}
   hpbar: {fileID: 7764877784598987642}
+  enemyType: 0
   hp: 30
-  moveSpd: 5
+  moveSpd: 1
 --- !u!1 &2347020034902329698
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,7 +350,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1421999755722809234}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -384,7 +385,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 49962668122823219}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -422,7 +423,7 @@ GameObject:
   - component: {fileID: 654498468499287848}
   - component: {fileID: 8832441520396497548}
   - component: {fileID: 1938290691691977670}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -497,7 +498,7 @@ GameObject:
   - component: {fileID: 5890072797343013446}
   - component: {fileID: 2152437138852310205}
   - component: {fileID: 5356910637779247793}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
