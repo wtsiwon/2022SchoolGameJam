@@ -15,4 +15,4 @@ MonoBehaviour:
   skillType: 3
   coolTime: 15
   skillObj: {fileID: 1459186253354386806, guid: 818a3af5825445e4381fefef49ebc2b4, type: 3}
-  coolDown: 1
+  coolDown: 0

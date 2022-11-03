@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Fire
   m_EditorClassIdentifier: 
   skillType: 2
-  coolTime: 7
+  coolTime: 8
   skillObj: {fileID: 0}
   coolDown: 0
